@@ -11,6 +11,7 @@ NICK = os.getenv("TWITCH_NICK")
 CHANNEL = os.getenv("TWITCH_CHANNEL")
 POST_INTERVAL = os.getenv("POSTING_INTERVAL_SECONDS")
 JOIN_COMMAND = os.getenv("JOIN_COMMAND")
+INTERVAL_COMMAND = os.getenv("INTERVAL_COMMAND")
 INTERVAL_COMMAND_MIN = int(os.getenv("POSTING_INTERVAL_SECONDS_MIN"))
 INTERVAL_COMMAND_MAX = int(os.getenv("POSTING_INTERVAL_SECONDS_MAX"))
 
@@ -22,6 +23,7 @@ class Bot(commands.Bot):
         super().__init__(
             token=TOKEN,
             nick=NICK,
+            prefix="",
             initial_channels=[CHANNEL],
         )
 
